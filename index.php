@@ -1,7 +1,16 @@
 <?php
 
 $appTitle = 'Postani Programer';
-$navigationLinks = ['glavna', 'o nama', 'kontakt']
+
+$navigationLinks = [
+    'glavna' => 'home',
+    'o nama' => 'about_us',
+    'kontakt' => 'contact',
+];
+
+$navigationLinksKeys = array_keys($navigationLinks);
+
+$currentYear = date('Y')
 
 ?>
 
@@ -21,14 +30,14 @@ $navigationLinks = ['glavna', 'o nama', 'kontakt']
 <body>
     <header>
         <nav>
-            <a href="/">
-                <?= $navigationLinks[0] ?>
+            <a href="<?= "{$navigationLinks['glavna']}" ?>.php">
+                <?= $navigationLinksKeys[0] ?>
             </a>
-            <a href="/">
-                <?= $navigationLinks[1] ?>
+            <a href="<?= "{$navigationLinks['o nama']}" ?>.php">
+                <?= $navigationLinksKeys[1] ?>
             </a>
-            <a href="/">
-                <?= $navigationLinks[2] ?>
+            <a href="<?= "{$navigationLinks['kontakt']}" ?>.php">
+                <?= $navigationLinksKeys[2] ?>
             </a>
         </nav>
     </header>
@@ -38,6 +47,15 @@ $navigationLinks = ['glavna', 'o nama', 'kontakt']
             <?= $appTitle ?>
         </h1>
     </main>
+
+    <footer>
+        <p>
+            Copyright @moj_sajt
+            <span>
+                <?= $currentYear ?>
+            </span>
+        </p>
+    </footer>
 </body>
 
 </html>
